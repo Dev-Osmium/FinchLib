@@ -25,6 +25,12 @@ public class DriveTrain {
         }
     }
 
+    /**
+     *
+     * @param finch The Finch object
+     * @param direction The direction to drive in
+     * @author Owen Salter
+     */
     public static void turn(Finch finch, EnumDirection direction) {
         int duration = 1000;
         if (direction == EnumDirection.LEFT) {
@@ -36,6 +42,15 @@ public class DriveTrain {
             System.err.println("Incorrect Parameters");
         }
 
+    }
+
+    /**
+     *
+     * @param finch The Finch object
+     * @author Owen Salter
+     */
+    public static void stop(Finch finch) {
+        finch.stopWheels();
     }
 
 }
