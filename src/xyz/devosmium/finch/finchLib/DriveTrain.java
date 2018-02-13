@@ -25,6 +25,11 @@ public class DriveTrain {
         }
     }
 
+    //TODO 2/13/2018 Add Accelerometer PID Controller
+    public static void driveWithPID(Finch finch, int distance, int duration) {
+
+    }
+
     /**
      *
      * @param finch The Finch object
@@ -38,14 +43,15 @@ public class DriveTrain {
         } else if (direction == EnumDirection.RIGHT) {
             finch.setWheelVelocities(0,255,duration);
         } else {
-            finch.setWheelVelocities(0,0);
-            System.err.println("Incorrect Parameters");
+            stop(finch);
+            finch.saySomething("Incorrect Parameters Provided");
+            finch.sleep(2000);
+            System.err.println("Incorrect Parameters provided to DriveTrain.turn()");
         }
 
     }
 
     /**
-     *
      * @param finch The Finch object
      * @author Owen Salter
      */
